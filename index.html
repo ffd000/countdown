@@ -1,172 +1,27 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mono</title>
+    <style>
+html {
+  background: rgb(197, 40, 25);
+}
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('card.png');
-    background-size: cover;
-    background-position: center;
+    visibility: hidden;
 }
-
-body:after {
-    content: "";
-    background-image: url('card.png');
-    background-size: cover;
-    background-position: center;
-    position: fixed;
-    width: 300%;
-    height: 300%;
-    opacity: .25;
-    animation: grain 8s steps(10) infinite;
-}
-
-body:before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    animation: flash 0.5s infinite alternate;
-}
-
-.content {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    margin-top: -3vh;
-}
-
-.text {
-    font: 'Shippori Mincho';
-    src: url('ShipporiMincho-Regular.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-    letter-spacing: -1px;
-    color: #fff;
-    text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
-}
-
-.footer {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%);
-    text-align: center;
-}
-
-@keyframes flash {
-    0% { opacity: 0.0; }
-    25% { opacity: 0.03; }
-    50% { opacity: 0.02; }
-    90% { opacity: 0.05; }
-    100% { opacity: 0.09; }
-}
-
-@keyframes grain{
-0%, 100% { transform:translate(0, 0) }
-10%{
-    transform:translate(-5%,-10%)
-}
-20%{
-    transform:translate(-15%,-20%)
-}
-30%{
-    transform:translate(-5%,-10%)
-}
-40%{
-    transform:translate(-15%,-20%)
-}
-
-50%{
-    transform:translate(-5%,-10%)
-}
-60%{
-    transform:translate(-15%,-20%)
-}
-70%{
-    transform:translate(-5%,-10%)
-}
-80%{
-    transform:translate(-15%,-20%)
-}
-90%{
-    transform:translate(-5%,-10%)
-}
-100%{
-    transform:translate(-15%,-20%)
-}
-}
-
-
-
-@keyframes glitch{
-  2%,64%{
-    transform: translate(2px,0) skew(0deg);
-  }
-  4%,60%{
-    transform: translate(-2px,0) skew(0deg);
-  }
-  62%{
-    transform: translate(0,0) skew(5deg); 
-  }
-}
-
-.glitch {
-    animation: glitch 1s linear infinite;
-}
-
-.glitch:before,
-.glitch:after{
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-}
-
-.glitch:before{
-  animation: glitchTop 1s linear infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
-
-@keyframes glitchTop{
-  2%,64%{
-    transform: translate(2px,-2px);
-  }
-  4%,60%{
-    transform: translate(-2px,2px);
-  }
-  62%{
-    transform: translate(13px,-1px) skew(-13deg); 
-  }
-}
-
-.glitch:after{
-  animation: glitchBotom 1.5s linear infinite;
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBotom{
-  2%,64%{
-    transform: translate(-2px,0);
-  }
-  4%,60%{
-    transform: translate(-2px,0);
-  }
-  62%{
-    transform: translate(-22px,5px) skew(21deg); 
-  }
-}
-
-</style>
-
+    </style>
+    <link rel="preload" href="main.css" as="style">
+    <link rel="stylesheet" href="main.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="main.css">
+    </noscript>
+</head>
 <body>
 <div class="content">
     <div class="text" style="font-size: 2vw">カウントダウン</div>
-    <div class="text" style="font-size: 6vw" id="countdown"></div>
+    <div class="text" style="font-size: 6vw" id="countdown">&nbsp;</div>
 </div>
 <div class="footer">
     <div class="text" style="font-size: 2vw">Animation number 'none'</div>
@@ -218,3 +73,4 @@ const end = "2024-04-20T00:00:00";
 countdown(end);
 </script>
 </body>
+</html>
