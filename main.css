@@ -115,7 +115,7 @@ body:before {
 }
 
 .glitch {
-    animation: glitch 1s linear infinite;
+    animation: glitch 5s linear infinite;
 }
 
 .glitch:before,
