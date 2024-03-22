@@ -21,7 +21,7 @@ body {
 <body>
 <div class="content">
     <div class="text" style="font-size: 2vw">カウントダウン</div>
-    <div class="text" style="font-size: 6vw" id="countdown">&nbsp;</div>
+    <div class="text" style="font-size: 6vw" id="countdown">00:00:00:00.000</div>
 </div>
 <div class="footer">
     <div class="text" style="font-size: 2vw">Animation number 'none'</div>
@@ -54,7 +54,7 @@ function countdown(end) {
             cd.classList.add("glitch");
         }
         cd.innerHTML = f
-    }, 10);
+    }, 100);
 }
 
 function pad(n) {
@@ -69,7 +69,7 @@ function pad3(n) {
     }
     return n;
 }
-const end = "2024-04-24T06:40:00";
+const end = "2024-03-24T06:40:00";
 countdown(end);
 </script>
 </body>
