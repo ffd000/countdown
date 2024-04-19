@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDMincho&family=Shippori+Mincho&display=swap');
+
+.shippori-mincho-regular {
+  font-family: "Shippori Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('card.jpg');
+    background-size: cover;
+    background-position: center;
+    visibility: visible;
+}
+
+body:after {
+    content: "";
+    background-image: url('card.jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    width: 300%;
+    height: 300%;
+    opacity: .25;
+    animation: grain 8s steps(10) infinite;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    animation: flash 0.5s infinite alternate;
+}
+
+.content {
+    z-index: 1;
+}
+
+.text {
+    text-align: center;
+    letter-spacing: -1px;
+    color: #fff;
+    text-shadow: #fff 1px 0 6px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+}
+
+@keyframes flash {
+    0% { opacity: 0.0; }
+    25% { opacity: 0.03; }
+    50% { opacity: 0.02; }
+    90% { opacity: 0.05; }
+    100% { opacity: 0.09; }
+}
+
+@keyframes grain{
+0%, 100% { transform:translate(0, 0) }
+10%{
+    transform:translate(-5%,-10%)
+}
+20%{
+    transform:translate(-15%,-20%)
+}
+30%{
+    transform:translate(-5%,-10%)
+}
+40%{
+    transform:translate(-15%,-20%)
+}
+
+50%{
+    transform:translate(-5%,-10%)
+}
+60%{
+    transform:translate(-15%,-20%)
+}
+70%{
+    transform:translate(-5%,-10%)
+}
+80%{
+    transform:translate(-15%,-20%)
+}
+90%{
+    transform:translate(-5%,-10%)
+}
+100%{
+    transform:translate(-15%,-20%)
+}
+}
+
+@keyframes particles {
+  0% {
+      transform: translateY(0) translateX(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh) translateX(100vw);
+      opacity: 0;
+  }
+}
