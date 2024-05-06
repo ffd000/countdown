@@ -7,7 +7,7 @@ var cw = w / 2;  // center of canvas
 var ch = h / 2;
 var scaleFactor = window.devicePixelRatio || 1;
 
-const end = "2024-12-31T06:40:00";
+const end = "2024-07-06T20:00:00";
 const e = new Date(end).getTime();
 
 function format_time_remainder() {
